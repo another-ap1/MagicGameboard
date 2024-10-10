@@ -1,0 +1,36 @@
+Project Proposal
+
+Stack-	The tech stack I plan on using for my capstone is React and Node. 
+
+Focus-	My main focus is going to be the Front-end development and using an api to fetch data to be viewed.
+        If time allows for it I have some ideas for a backend as well. 
+
+Type-	This could be a website but I mostly imagine it as a program you would have on your computer and you 
+        would load it it when you are about to start a game of magic the gathering. So that it could also be 
+        displayed on a larger screen or projecter to give an even cooler experience when playing.
+
+Goal-	The goal of my project is to create a Magic the gathering gameboard that would keep track of the many 
+        interactions and game states of the game. It will keep track of users life total, how many different 
+        counters they have, if they are monarch, if the game is in day or night, using the api to fetch data 
+        about cards that are being played and also the users commander to set it as a background. I also want 
+        to have an area you can look up cards and another area you can look up rules about the game since there 
+        is so many rules, every game you play there is always some questions or reminders that need to happen. 
+
+Users-	My demographic would be other people who also play magic the gathering which is a huge audience. There 
+        are some other “gameboards” out there but they are so simple and only keep track of one thing. I want to 
+        build an all in one. 
+
+Data-	The data I plan on using is Card information and rules for the game. There is two API’s that I found 
+        scryfall.com which seems to have most of what I need but I also found a second one called Magic: the 
+        Gathering Developers that also provides a lot of data.
+
+
+I want to make a one stop shop for magic the gathering players to keep track of their game state. Most the time you 
+are having to use multiple apps or physical tools like dice and cards that represent what’s happening in the game. 
+The user experience would be to load the app on your computer or tablet (something ideally with a bigger screen) and 
+you would select how many players you have that will be playing (2-6). Next it takes you to the main gameboard where 
+each player will input their commander’s name and also the their name. once they do data will be fetched from the API 
+about their commander and it will put the commander’s image in their user gameboard along with many different ways to 
+keep track of the game. Also provide a space where they can click on and roll different dices (6 sided, 10 sided, 20 sided, etc.) . 
+Above with be a Nav bar that can navigate them to rules for the game and also an area to search for cards in case someone
+ needs clarification on a card that is being played. 

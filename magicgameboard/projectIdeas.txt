@@ -1,0 +1,36 @@
+Capstone Project Ideas!
+
+Magic the Gathering Game Board
+    my first idea is to create a magic the gethering gameboard that would keep track of the game
+    status while also being able to look up cards and rules of the game. it would have a gameboad and
+    also individual "boards" for each player. there are a lot of different things that could happen in the 
+    game and i would like to create a board that keeps track of those things. Most gameboards are pretty basic
+    and i would like to build on top of those.
+
+    maybe a log in feature that would keep track of users and what commanders they have and also wins and losses.  
+
+    individual tracking
+        keep track of health, commander damage, counters, if you are the monarch, picture of your commander as your background
+        when your life gets to certain numbers it plays a sound or shows a new image. 
+
+    Overall board state
+        day or night
+
+    API FOUND
+    https://docs.magicthegathering.io/
+    https://scryfall.com/docs/api
+
+Nutrtrion app
+    a app that you can track food and calories and also have a feature to log in and talk with other 
+    people who have likeminded goals. have a space for articles on information on latest diet trends. 
+    have another area for reciepe ideas.
+
+    API FOUND
+    https://www.nutritionix.com/business/api?creative=344317953788&keyword=calories%20api&matchtype=e&network=g&device=c&utm_source=google&utm_medium=cpc&utm_campaign=NutritionAPI&gad_source=1&gclid=Cj0KCQjw3vO3BhCqARIsAEWblcDGJCIlXsitBWPu5cr_GalA6P2o2MF-a8HEZnVOWP7WBOXMpC_84e8aAnewEALw_wcB
+
+Car auction/ for sale
+    a place to buy, sell or auction your car. would require a log in and also include a forum type area
+    to talk about cars. and have a photo gallery where users can post pictures of there cars.
+
+    API FOUND
+    https://developer.edmunds.com/api-documentation/vehicle/

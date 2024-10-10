@@ -1,0 +1,26 @@
+.nav-link {
+    color: black;
+}
+.nav-link.active{
+    color: purple;
+    font-weight: bold;
+}
+.nav-link:hover{
+    color: black;
+}
+
+.homebtn {
+    font-weight: bolder;
+    color: black;
+}
+.homebtn.active{
+    color: purple;
+}
+.homebtn:hover{
+    color: black;
+}
+
+.nav-bar {
+    /* TEMPORARY MAYBE ADD A PICTURE WITH MANA SYMBOLS */
+    background-color: lightblue;
+}

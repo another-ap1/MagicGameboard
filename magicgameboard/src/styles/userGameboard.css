@@ -1,0 +1,9 @@
+.userGameboard {
+    width: 400px;
+    height: 500px;
+    border: solid 2px;
+    background-color: darkgray;
+    padding: 10px;
+    margin: 10px;
+}
+
