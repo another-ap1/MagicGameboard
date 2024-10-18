@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://example.com/product.schema.json",
+    "title": "Magic Gameboard",
+    "description": "Adding a new commander to the database",
+    "type":"object",
+    "properties": {
+        "commander":{
+            "type":"string",
+            "minLength":1,
+            "maxLength": 42
+        },
+        "colors":{
+            "type":"string",
+            "minLength": 1,
+            "maxLength": 28
+        },
+        "users_id":{
+            "type":"integer",
+            "refrences":"users"
+        }
+    },
+    "additionalProperties":false,
+    "required":[
+        "commander",
+        "colors",
+        "users_id"
+    ]
+}
+

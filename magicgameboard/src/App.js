@@ -1,8 +1,6 @@
 //react/tools
-import React, {useEffect} from "react";
+import React from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom"
-import axios from "axios";
-import MagicApi from "./MagicApi";
 
 //Navigation
 import Navigation from "./Navigation";
@@ -10,6 +8,7 @@ import Navigation from "./Navigation";
 //routes
 import Welcome from "./Welcome";
 import MainGameboard from "./gameboards/MainGameboard";
+import Bruh from "./gameboards/Bruh";
 import CardSearch from "./gameInfo/CardSearch";
 import GameRules from "./gameInfo/GameRules";
 import CreateUser from "./user/CreateUser";
@@ -25,9 +24,11 @@ function App() {
 
           <Route path="/" element={<Welcome />}></Route>
 
-          <Route path="/mainGameboard/" element={<MainGameboard />}></Route>
+          <Route path="/mainGameboard/:numPlayers" element={<MainGameboard />}></Route>
+          
+          <Route path="/bruh" element={<Bruh />}></Route>
 
-          <Route path="/profile/:id" element={<Profile />}></Route>
+          <Route path="/user/:username/:firstname/:id" element={<Profile />}></Route>
 
           <Route path="/newUser" element={<CreateUser />}></Route>
 

@@ -2,7 +2,9 @@
 
 import React from "react";
 
+
 const CardSearch = () => {
+  
   return (
     <div>
       <h1>cards will be displayed here and you can search</h1>

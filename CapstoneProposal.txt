@@ -33,4 +33,4 @@ each player will input their commander’s name and also the their name. once th
 about their commander and it will put the commander’s image in their user gameboard along with many different ways to 
 keep track of the game. Also provide a space where they can click on and roll different dices (6 sided, 10 sided, 20 sided, etc.) . 
 Above with be a Nav bar that can navigate them to rules for the game and also an area to search for cards in case someone
- needs clarification on a card that is being played. 
+needs clarification on a card that is being played. 
