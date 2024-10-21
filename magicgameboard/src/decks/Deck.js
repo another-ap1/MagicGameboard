@@ -1,54 +1,65 @@
 import React,{useState, useEffect} from "react";
-import {Row, Card, CardTitle, CardBody, Button} from "reactstrap"
+import {Row, Card, CardTitle, CardBody, Button, CardImgOverlay, CardImg} from "reactstrap"
 
 //API
-//import MagicApi from '../MagicApi';
 import UserApi from '../Api';
+import MagicApi from "../MagicApi";
 
 const Deck = ({id}) => {
-
+    //setting state for decks and if we are loading data from db
     const [decks, setDecks] = useState();
+    const [loading, setLoading] = useState(true);
 
-    let userInfo = {id}
-
-    const deleteDeck = (data) => {
-
-    }
-
-    const handleClick = (id) => {
+    //function for deleting current users deck from list
+    const deleteDeck = async (data) => {
         try{
-            deleteDeck(id)
+            const res = await UserApi.deleteDeck(data);
+            setDecks(decks.splice(res.data.commander, 1));
         }catch(e){
             console.alert(e);
         }
     }
     
+    //useEffect for fetching deck data for user from database
     useEffect(()=>{
         const gettingDecks = async (userInfo) => {
-            console.log(userInfo)
-            const res = await UserApi.getDecks(userInfo);
-            console.log(res.data)
-            setDecks(res.data);
-            console.log(decks);
+            const decks = await UserApi.getDecks(userInfo);
+            await Promise.all(decks.map(async deck => 
+                deck.img = await MagicApi.getCardImage(deck.commander)));
+            setDecks(decks);
+            setLoading(false);
         }
-        gettingDecks(userInfo)
+        gettingDecks({id})
     },[]);
 
-    if(!decks) return <div><h3>Fetching Your Commander Decks...</h3></div>
+    //while "loading" do this
+    if(loading) return <div><h3>Fetching Your Commander Decks...</h3></div>
 
+    //when all done loading data from db this will render
     return(
+    
         <Row>
-            {decks.map(d => {
+            
+            {decks.map(deck => {
+                return (
                 <Card key={crypto.randomUUID()}>
-                    <CardTitle>{d.commander}</CardTitle>
-                    <CardBody>
-                        <h3>{d.colors}</h3>
-                    </CardBody>
-                    <Button onClick={() => handleClick(d.id)}>Delete</Button>
+
+                        <CardTitle><h3>{deck.commander}</h3></CardTitle>
+                        <CardImg src={deck.img}></CardImg>
+                        <CardBody>
+                            <p>{deck.colors}</p>
+                        </CardBody>
+                        
+                        <Button onClick={() => deleteDeck(deck)}>Delete</Button>
+                    
                 </Card>
+                )
             })}
+            
         </Row>
     )
+    
+    
 }
 
 export default Deck;

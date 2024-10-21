@@ -1,8 +1,7 @@
-//Form for creating and adding a new user to the database
-
 import React, {useState} from "react";
 import UserApi from "../Api"
 
+//components 
 import UserForm from "../forms/UserForm";
 import CurrentUsers from "./CurrentUsers";
 
@@ -12,13 +11,16 @@ const CreateUser = () => {
     firstname:""
   } 
   
+  //setting form data state
   const [formData, setFormData] = useState(INITIAL_VALUES)
 
+  //function for adding a new user to the database
   const addUser= async (data) => {
     const newUser = await UserApi.signup(data);
     setFormData(INITIAL_VALUES);
   }
 
+  //handleSubmit that is passed as a prop to the userform
   const handleSubmit = (e) => {
     try{
       addUser(formData)

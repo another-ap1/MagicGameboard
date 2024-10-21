@@ -1,6 +1,3 @@
-//here it will display your username and you can edit information or add more decks
-// to your profile. 
-
 import React, {useState} from "react";
 import {useParams, useNavigate} from "react-router-dom"
 import UserApi from "../Api";

@@ -3,10 +3,9 @@ const Deck = require("../models/decks");
 const router = new express.Router();
 
 //get all decks for currenr user
-router.get("/", async (req, res, next) => {
+router.get("/:id", async (req, res, next) => {
     try{
-        const {id} = req.body;
-        const decks = await Deck.getDecks(id)
+        const decks = await Deck.getDecks(req.params.id)
         return res.json(decks);
     }catch(e){
         return next(e)

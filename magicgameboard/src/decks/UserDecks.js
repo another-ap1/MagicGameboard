@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import {Row} from "reactstrap"
+import React from 'react';
 
 //components
 import Deck from './Deck';
@@ -9,12 +8,14 @@ function UserDecks({username, id}) {
     return (
         <div>
             <div>
-                <Row>
-                    <Deck id={id} />
-                </Row>
+                
+                <Deck id={id} />
+                
             </div>
             <div>
+
                 <DeckForm id={id}/>
+
             </div>
         </div>
     )

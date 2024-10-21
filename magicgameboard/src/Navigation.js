@@ -22,11 +22,7 @@ function Navigation() {
                 </NavItem>
 
                 <NavItem>
-                    <NavLink to="/rules" className="nav-link">Rules</NavLink>
-                </NavItem>
-
-                <NavItem>
-                    <NavLink to="/newUser" className="nav-link">Create User</NavLink>
+                    <NavLink to="/newUser" className="nav-link">Current/Create User</NavLink>
                 </NavItem>
 
             </Nav>

@@ -36,8 +36,8 @@ router.patch("/edit", async function(req, res, next){
 
 //delete a current user from the database
 router.delete("/delete", async function(req,res,next){
+    const {id} = req.body;
     try{
-        const {id} = req.body;
         const deleteUser = await User.deleteUser(id);
         return res.json(deleteUser);
     }catch(e){

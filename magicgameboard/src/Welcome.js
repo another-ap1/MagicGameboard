@@ -20,7 +20,6 @@ const Welcome = () => {
               <Button><Link to="/mainGameboard/4">4 Players</Link></Button>
               <Button><Link to="/mainGameboard/5">5 Players</Link></Button>
               <Button><Link to="/mainGameboard/6">6 Players</Link></Button>
-              <Button><Link to="/bruh">6+ Players</Link></Button>
               
           </div>
 
