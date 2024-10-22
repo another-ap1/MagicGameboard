@@ -15,7 +15,7 @@ const CommanderFound = ({card}) => {
                 <CardImgOverlay>
                     <CardImg 
                         alt=""
-                        src={card.image_uris.art_crop}
+                        src={card.img}
                         width="100%"
                     />
                     <CardTitle tag="h3">{card.name}</CardTitle>

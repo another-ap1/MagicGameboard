@@ -6,7 +6,7 @@ import {UncontrolledDropdown, Button, DropdownToggle,
 import UserApi from "../Api"
 import MagicApi from "../MagicApi";
 
-const ExistingUserDropdown = () => {
+const ExistingUserDropdown = ({whenHaveCurrentUser}) => {
 
     const [users, setUsers] = useState([]);
     const [user, setUser] = useState();
@@ -15,7 +15,6 @@ const ExistingUserDropdown = () => {
     useEffect(() => {
         const getUsers = async () => {
             const res = await UserApi.getAll();
-            console.log(res.data)
             setUsers(res.data);
         }
         getUsers();
@@ -26,17 +25,25 @@ const ExistingUserDropdown = () => {
         await Promise.all(decks.map(async deck => 
             deck.img = await MagicApi.getCardImage(deck.commander)));
         console.log(decks);
+        console.log(userInfo.username);
         setUser(userInfo.username);
         setDecks(decks);
-        //setLoading(false);
+        
     }
 
     const handleClick = (data) => {
         try{
-            console.log(data);
-            //gettingDecks(e.target)
+            gettingDecks(data)
         }catch(e){
+            console.alert(e);
+        }
+    }
 
+    const handleSecondClick = (data) => {
+        try{
+            whenHaveCurrentUser(data);
+        }catch(e){
+            console.alert(e);
         }
     }
 
@@ -44,36 +51,44 @@ const ExistingUserDropdown = () => {
     if(users){
         return(
         <div>
-            <UncontrolledDropdown>
-                <Button>Users</Button>
-                <DropdownToggle caret/>
-                <DropdownMenu>
-                    {users.map((u) => {
-                        return <DropdownItem key={crypto.randomUUID()} onClick={handleClick(u)}>{u.username}</DropdownItem>
-                    })}
-                </DropdownMenu>
-            </UncontrolledDropdown>
-        </div>
-        
-        )
-    }
-
-    //when a user is selected show that dropdown of commanders
-    if(user && decks){
-        return (
             <div>
                 <UncontrolledDropdown>
                     <Button>Users</Button>
                     <DropdownToggle caret/>
                     <DropdownMenu>
-                        {decks.map((d) => {
-                            return <DropdownItem key={crypto.randomUUID()}>{d.commander}</DropdownItem>
+                        {users.map((u) => {
+                            return (
+                                    <DropdownItem 
+                                            key={crypto.randomUUID()} 
+                                            onClick={() => handleClick(u)}>
+                                            {u.username}
+                                    </DropdownItem>
+                            )
                         })}
                     </DropdownMenu>
                 </UncontrolledDropdown>
             </div>
+            <div>
+                <UncontrolledDropdown>
+                    <Button>Commander</Button>
+                    <DropdownToggle caret/>
+                    <DropdownMenu>
+                        {decks.map((d) => {
+                            return (
+                                <DropdownItem 
+                                    key={crypto.randomUUID()}
+                                    onClick={() => handleSecondClick(d)}>
+                                    {d.commander}
+                                </DropdownItem>
+                            )
+                        })}
+                    </DropdownMenu>
+                </UncontrolledDropdown>
+            </div>
+        </div>
+        
         )
-    }     
+    }    
 }
 
 export default ExistingUserDropdown;

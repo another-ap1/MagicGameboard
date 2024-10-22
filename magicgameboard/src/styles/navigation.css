@@ -22,5 +22,9 @@
 
 .nav-bar {
     /* TEMPORARY MAYBE ADD A PICTURE WITH MANA SYMBOLS */
-    background-color: lightblue;
+    background-color: rgb(94, 90, 90);
+}
+
+img{
+    height: 80px;
 }

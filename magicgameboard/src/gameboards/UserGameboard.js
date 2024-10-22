@@ -1,8 +1,7 @@
 //React and components
 import React, {useState} from "react";
-import {Card,CardBody,CardTitle,CardImg,CardImgOverlay,Col,
-    Form,FormGroup,Label,Input,Button} from "reactstrap"
 import MagicApi from "../MagicApi";
+import {Col} from "reactstrap"
 
 //components
 import NoUsernameForm from "../forms/NoUsernameForm";
@@ -13,28 +12,24 @@ import CommanderFound from "./CommanderFound";
 import "../styles/userGameboard.css"
 
 const UserGameboard = () => {
-    const INITIAL_VALUES= {
-        commander: "",
-        username: ""
-    }
 
     //setting state for card life and form
-    const [formData, setFormData] = useState(INITIAL_VALUES)
     const [card, setCard] = useState(null);
     const [loading, setLoading]= useState(true);
-    
     
     //making the api request to to the magicApi file
     async function getCardData({commander}){
         const cardData = await MagicApi.getCards(commander);
+        setCard({commander:cardData.name,
+                img:cardData.image_uris.art_crop})
         console.log(cardData);
-        setCard(cardData);
         setLoading(false);
     }
 
     function whenHaveCurrentUser(card){
+        console.log("WE ARE HERE", card)
         setCard(card)
-        setLoading(true);
+        setLoading(false);
     }
 
     if(loading){

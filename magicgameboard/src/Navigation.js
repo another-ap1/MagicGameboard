@@ -4,6 +4,7 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 import {Navbar, NavItem, Nav} from "reactstrap";
+import magicLogo from "./images/magic.png"
 
 import "./styles/navigation.css";
 
@@ -12,7 +13,7 @@ function Navigation() {
     <div>
         <Navbar expand="md nav-bar">
             <NavLink to="/" className="navbar-brand homebtn">
-                MTG Gameboard
+                <img src={magicLogo}/>
             </NavLink>
 
             <Nav className="ml-auto" navbar>
