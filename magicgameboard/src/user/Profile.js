@@ -1,71 +1,36 @@
-import React, {useState} from "react";
-import {useParams, useNavigate} from "react-router-dom"
-import UserApi from "../Api";
-import { Button } from "reactstrap";
+import React from "react";
+import {useParams} from "react-router-dom"
 
 //components
-import UserForm from "../forms/UserForm";
-import UserDecks from "../decks/UserDecks";
+import EditUserForm from "../forms/EditUserForm";
+import Decks from "../decks/Deck"
+import DeckForm from "../forms/DeckForm";
 
+//styles
+import "../styles/profile.css"
 
 const Profile = () => {
-  //react-router-dom tools
-  const {username, firstname, id} = useParams();
-  const navigate = useNavigate();
-  
-  //states
-  const [formData, setFormData] = useState({username:username,firstname:firstname,id:id});
+    //react-router-dom tools
+    const {username, firstname, id} = useParams();
+    return (
+        <div className="profile">
 
-  //editing the current user then navigates to creating user
-  const editUser = async (data) => {
-    console.log(data);
-    const edit = await UserApi.editUser(data);
-    navigate("/newUser");
-  }
 
-  //Delete the current user navigates back to creating a user page
-  const deleteUser = async (data) => {
-    const res = await UserApi.deleteUser(data);
-    navigate('/newUser');
-  }
+            <div className="profileForm">
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    try{
-      editUser(formData);
-    }catch(err){
-      console.alert(err);
-    }
-  }
+                <EditUserForm username={username}
+                              firstname={firstname}
+                              id={id}/>
+                <DeckForm id={id}/>
 
-  const handleClick = (e) => {
-    e.preventDefault()
-    try{
-      deleteUser(formData)
-    }catch(err){
-      console.alert(err);
-    }
-  }
+            </div>
+            <div>
 
-  return (
-    <div>
-      <div>
+                <Decks username={username} id={id}/>
 
-        <h1>Edit {username}'s Profile</h1>
-        <UserForm formData={formData} setFormData={setFormData} handleSubmit={handleSubmit}/>
-
-      </div>
-
-      <Button onClick={handleClick}>Delete</Button>
-
-      <div>
-
-        <h1>{username} decks</h1>
-        <UserDecks username={username} id={id}/>
-
-      </div>
-    </div>
-  );
+            </div>
+        </div>
+    );
 }
 
 export default Profile;

@@ -1,0 +1,18 @@
+.createUser{
+    background-color: rgb(10, 51, 10);
+    border: none;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 200px;
+}
+
+Form{
+    width: 350px;
+    padding: 20px;
+}
+
+Label {
+    font-size: 20px;
+}
+

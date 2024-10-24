@@ -1,0 +1,37 @@
+.card{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.results{
+    margin-left: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cardSearch{
+    margin-top: 30px;
+    margin-right: 120px;
+    text-align: center;
+    margin-bottom: 30px;
+    display:flex;
+    justify-content: center;
+}
+
+.grid-container {
+    margin-left: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .grid-item img {
+    max-width: 100%;
+    display: block;
+  }

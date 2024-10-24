@@ -5,6 +5,9 @@ import {Row, Card, CardTitle, CardBody, Button, CardImgOverlay, CardImg} from "r
 import UserApi from '../Api';
 import MagicApi from "../MagicApi";
 
+//styles
+import "../styles/deck.css"
+
 const Deck = ({id}) => {
     //setting state for decks and if we are loading data from db
     const [decks, setDecks] = useState();
@@ -38,21 +41,19 @@ const Deck = ({id}) => {
     //when all done loading data from db this will render
     return(
     
-        <Row>
+        <Row className="decks">
             
             {decks.map(deck => {
                 return (
-                <Card key={crypto.randomUUID()}>
 
-                        <CardTitle><h3>{deck.commander}</h3></CardTitle>
-                        <CardImg src={deck.img}></CardImg>
-                        <CardBody>
-                            <p>{deck.colors}</p>
-                        </CardBody>
+                <Card key={crypto.randomUUID()} className="deckInfo">
+
+                    <CardImg src={deck.img} className="deckImg"></CardImg>
                         
-                        <Button onClick={() => deleteDeck(deck)}>Delete</Button>
+                    <Button onClick={() => deleteDeck(deck)}>Delete</Button>
                     
                 </Card>
+
                 )
             })}
             

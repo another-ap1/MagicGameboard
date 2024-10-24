@@ -31,7 +31,7 @@ function App() {
 
           <Route path="/cardList" element={<CardSearch />}></Route>
 
-          <Route element={<NotFound/>}></Route>
+          <Route path="" element={<NotFound/>}></Route>
 
         </Routes>
       </BrowserRouter>

@@ -17,7 +17,8 @@ class MagicApi {
   //get just the card image
   static async getCardImage(card){
     const res = await axios.get(`${BASE_URL}/cards/named?exact=${card}`);
-    return res.data.image_uris.art_crop;
+    console.log(res.data)
+    return res.data.image_uris.normal;
   }
 
   //searching for a card name you dont know, returns simular to what you put in.
@@ -27,7 +28,7 @@ class MagicApi {
       const res = await axios.get(`${BASE_URL}/cards/search?q=${cardSearch}`);
       return res;
     }catch(e){
-      console.alert(e);
+      console.log(e)
     }
   }
 

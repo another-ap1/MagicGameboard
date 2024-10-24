@@ -1,0 +1,22 @@
+.decks{
+    justify-content: center;
+}
+
+.deckInfo{
+    width: 400px;
+    height: 600px;
+    border: solid 2px;
+    background-color: darkgray;
+    padding: 10px;
+    margin: 10px;
+}
+
+.deckImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+Button {
+    margin-top: 10px;
+}

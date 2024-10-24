@@ -11,7 +11,7 @@ const CardSearchForm = ({findCards}) => {
           findCards(formData);
           setFormData({cardSearch:""})
         }catch(e){
-          console.alert(e)
+          return <div>Sorry, unable to find please refine your search</div>
         }
       }
 

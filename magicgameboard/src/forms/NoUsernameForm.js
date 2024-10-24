@@ -16,6 +16,7 @@ const NoUsernameForm = ({getCardData}) => {
     }
 
     const handleChange = (e) => {
+        console.log(e)
         const { name, value } = e.target;
         setFormData((data) => ({
             ...data,
@@ -24,24 +25,24 @@ const NoUsernameForm = ({getCardData}) => {
     };
 
     return (
-        <div>
-            <Form onSubmit={handleSubmit}>
-                <FormGroup>
+        
+        <Form onSubmit={handleSubmit}>
+            <FormGroup>
 
-                    <Label>Commander</Label>
-                    <Input 
-                        type="text"
-                        name="commander"
-                        id="commander"
-                        value={formData.commander}
-                        onChange={handleChange}
-                        required/>
-                    <Label>Player</Label>
+            <Label>Commander</Label>
+                <Input
+                    type="text"
+                    name="commander"
+                    id="commander"
+                    value={formData.commander}
+                    onChange={handleChange}
+                    required/>
+                
 
-                </FormGroup>
-                <Button type="submit">Enter The Battlefeild</Button>
-            </Form>
-        </div>
+            </FormGroup>
+            <Button type="submit">Enter The Battlefeild</Button>
+        </Form>
+        
     )
 }
 

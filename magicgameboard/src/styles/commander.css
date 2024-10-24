@@ -1,0 +1,14 @@
+.commanderDmgCard {
+    background-color: red;
+    max-height: 260px;
+    width: 100px;
+    align-items: center;
+    flex: auto;
+}
+
+.commanderDmgBtn{
+    border-radius: 5px;
+    background-color: red;
+    border: none;
+    padding: 5px;
+}

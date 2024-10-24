@@ -20,6 +20,7 @@ const UserForm = ({id}) => {
     }
 
     const handleChange = (e) => {
+        console.log(e)
         const { name, value } = e.target;
         setFormData((data) => ({
             ...data,
@@ -29,28 +30,30 @@ const UserForm = ({id}) => {
 
     return(
         <Form onSubmit={handleSubmit}>
-          <FormGroup>
+        
+            <FormGroup> 
+                <h1 className="title">Add More Commanders</h1>
 
-              <Label>Commander</Label>
-              <Input
-                  type="text"
-                  name="commander"
-                  id="commander"
-                  value={formData.commander}
-                  onChange={handleChange}
-                  required/>
+                <Label>Commander</Label>
+                <Input
+                    type="text"
+                    name="commander"
+                    id="commander"
+                    value={formData.commander}
+                    onChange={handleChange}
+                    required/>
 
-              <Label>Colors</Label>
-              <Input
-                  type=""
-                  name="colors"
-                  id="colors"
-                  value={formData.colors}
-                  onChange={handleChange}
-                  required/>
+                <Label>Colors</Label>
+                <Input
+                    type=""
+                    name="colors"
+                    id="colors"
+                    value={formData.colors}
+                    onChange={handleChange}
+                    required/>
 
-          </FormGroup>
-          <Button type="submit">Submit</Button>
+            </FormGroup>
+            <Button type="submit">Submit</Button>
       </Form>
     )
 }

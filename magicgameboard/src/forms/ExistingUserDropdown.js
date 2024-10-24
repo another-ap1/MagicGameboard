@@ -51,7 +51,7 @@ const ExistingUserDropdown = ({whenHaveCurrentUser}) => {
     if(users){
         return(
         <div>
-            <div>
+            <div key={crypto.randomUUID()}>
                 <UncontrolledDropdown>
                     <Button>Users</Button>
                     <DropdownToggle caret/>
@@ -68,7 +68,7 @@ const ExistingUserDropdown = ({whenHaveCurrentUser}) => {
                     </DropdownMenu>
                 </UncontrolledDropdown>
             </div>
-            <div>
+            <div key={crypto.randomUUID()}>
                 <UncontrolledDropdown>
                     <Button>Commander</Button>
                     <DropdownToggle caret/>

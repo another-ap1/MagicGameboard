@@ -1,9 +1,12 @@
 import React, {useState} from "react";
 import UserApi from "../Api"
+import {CardGroup} from "reactstrap"
 
 //components 
 import UserForm from "../forms/UserForm";
 import CurrentUsers from "./CurrentUsers";
+
+import "../styles/currentUser.css"
 
 const CreateUser = () => {
   const INITIAL_VALUES = {
@@ -30,16 +33,12 @@ const CreateUser = () => {
   }
 
   return (
-    <div>
-      <h1>Create a Account</h1>
-  
-      <UserForm formData={formData} setFormData={setFormData} handleSubmit={handleSubmit}/>
+    <CardGroup>
       
-      <div>
-        <h3>Current Users</h3>
-        <CurrentUsers />
-      </div>
-    </div>
+      <UserForm formData={formData} setFormData={setFormData} handleSubmit={handleSubmit}/>
+      <CurrentUsers />
+      
+    </CardGroup>
   );
 }
 
