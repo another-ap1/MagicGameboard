@@ -7,7 +7,11 @@ The intent of this application is to have it on a big screen while you play that
 
 lastly I included a card search thats handy to use when you are trying to find a particular card. You just need to know a partial of the card and it will bring up anything thats close. 
 
+<h3>Details</h3>
+For this application I used javascript, React, express, Node and a postgress database. The database contains two tables one for user information (username, firstname). The second is for user deck information which has a relationship with users and also if you delete a user from the users table it will also remove any deck information from that user. 
 
+<h3>API</h3>
+I am using a already created api https://scryfall.com/docs/api for card information such as imagaes and commander information
 
-
-I am using my own API for the users and decks and their relationship with eachother. And I am using a already created api https://scryfall.com/docs/api for card information such as imagaes and commander information
+<h3>More information</h3>
+This is my capstone project for my coding bootcamp. I cant wait to keep adding to this as I use it for my own commander games and come up with more ideas. 
